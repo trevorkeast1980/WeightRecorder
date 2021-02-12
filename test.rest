@@ -1,0 +1,37 @@
+
+POST http://localhost:8000/weights  HTTP/1.0
+From: frog@jmarshall.com
+User-Agent: HTTPTool/1.0
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 32
+
+date=12/30/2020&weight=100
+
+###
+
+
+PUT http://localhost:8000/weights  HTTP/1.0
+From: frog@jmarshall.com
+User-Agent: HTTPTool/1.0
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 32
+
+date=12/31/2020&weight=268
+
+###
+
+GET http://localhost:8000/weights
+
+###
+
+DELETE http://localhost:8000/weights
+From: frog@jmarshall.com
+User-Agent: HTTPTool/1.0
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 32
+
+date=12/30/2021
+
+###
+
+POST http://localhost:8000/weights?date=12/30/2020&weight=200
