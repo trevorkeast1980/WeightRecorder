@@ -4,8 +4,7 @@ import axios from 'axios';
 export const weightData = async () => {
   return axios.get(`http://localhost:8000/weights`)
   .then(function (response) {
-    console.log(response.data);
-    return response;
+    return response.data;
   })
 }
 

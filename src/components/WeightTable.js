@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {weightData} from '../services/weights';
-
 export const WeightTable = ({ }) => {
 
-let weights = weightData();
-console.log(weights);
+    const [weightEntries, setWeightEntries] = useState([]);
+
+    useEffect(() => {
+        weightData().then(weights => setWeightEntries(weights));
+    },[]);
+
 
 
     return (
@@ -17,10 +20,13 @@ console.log(weights);
                 </tr>
             </thead>
             <tbody>
-                 {/* {weights.data.map(weight =>
-                    <tr>{weight.date}</tr>
+                 {weightEntries.map(weightEntry =>
+                    <tr>
+                        <td>{weightEntry.date}</td>
+                        <td>{weightEntry.weight}</td>
+                        </tr>
 
-                    )}  */}
+                    )} 
             </tbody>
         </table>
 
